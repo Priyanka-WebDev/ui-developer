@@ -1,0 +1,109 @@
+<div class="container">
+    <div class="card">
+        <div class="heading">
+            <h1>Registration <i class="fa-solid fa-circle-xmark" routerLink=""></i></h1>
+
+        </div>
+        <div class="row  section">
+            <div class="col-4">
+                <div class="image-container">
+                    <img [src]="ProfileDp" alt="ProfileDp" height="200" width="200" [(ngModel)]="data.image">
+                </div>
+                <input name="img" hidden type="file" #profileUpload (change)="ImageUpload($event)">
+                <button class="btn btn-primary m-2 ms-4" mat-raised-button color="primary"
+                    (click)="profileUpload.click()">upload image</button>
+
+
+            </div>
+            <div class="col-8">
+                <form #myform="ngForm" (ngSubmit)="doRegisteration(myform.value)">
+                    <div class="row name">
+                        <div class="col-6">
+                            <mat-form-field appearance="outline" class="field">
+                                <mat-label>Fisrt name</mat-label>
+                                <input class="name form-control" type="text" name="name" [(ngModel)]="data.Fname"
+                                    matInput placeholder="First Name" required="">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-6">
+                            <mat-form-field appearance="outline" class="field">
+                                <mat-label>Last name</mat-label>
+                                <input class="name form-control" type="text" name="Lname" [(ngModel)]="data.Lname"
+                                    matInput placeholder="Last Name" required="">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <mat-form-field appearance="outline" class="field email">
+                        <input class="form-control " type="email" name="email" matInput placeholder="Email"
+                            minlength="2" maxlength="30" [(ngModel)]="data.Email" required>
+                    </mat-form-field>
+
+
+                    <mat-form-field appearance="outline" class="field phone">
+                        <input name="phone" class="form-control" matInput placeholder="(541)754-3010" minlength="10"
+                            maxlength="10" required="" [(ngModel)]="data.MobileNo" required="">
+                    </mat-form-field>
+
+
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for="age">Age {{age}}</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="range" class="form-range customRange" value="1" min="20" max="60" name="age"
+                                [(ngModel)]="data.age" #ageInput (input)="updateAge(ageInput.value)" />
+                            <div class="d-flex justify-content-between">
+                                <span>20</span>
+                                <span>60</span>
+                            </div>
+                        </div>
+                    </div>
+                    <mat-form-field class="me-5">
+                        <mat-label>State</mat-label>
+                        <select #team (change)="onSelected(team.value)" matNativeControl class="form-select choice"
+                            id="select" aria-label="State" [(ngModel)]="data.State" required>
+                            <option value="State">-- State --</option>
+                            <option value="maharashtra">Maharashtra</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Panjab">Panjab</option>
+                        </select>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>
+                            Country
+                        </mat-label>
+                        <select #country (change)="onSelectedCountry(country.value)" matNativeControl
+                            placeholder="Country" class="form-select choice" id="select" aria-label="Country"
+                            [(ngModel)]="data.Country" required>
+                            <option default>-- Counntry --</option>
+                            <option value="India">India</option>
+                            <option value="USA">USA</option>
+                            <option value="Japan">Japan</option>
+                        </select>
+                    </mat-form-field>
+                    
+                    <mat-form-field appearance="outline" class="field">
+                        <mat-label>Address</mat-label>
+                        <input class="form-control" type="text" name="name" [(ngModel)]="data.Address" matInput
+                            placeholder="Ex. 100 Main St">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="field">
+                        <mat-label>Tag</mat-label>
+                        <input class="form-control" type="text" name="tag" matInput placeholder="Tag"
+                            [(ngModel)]="data.tags">
+                    </mat-form-field>
+                    <div class="form-control border-0">
+                        <input type="checkbox" name="subscribe" id="subscribe" #subscribe>
+                        <span class="text-muted">subscribe to newslatter</span>
+                    </div>
+                    <button type="reset" class="btn border" data-bs-dismiss="modal"
+                        style="margin: 10px;">Cancel</button>
+                    <button mat-raised-button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

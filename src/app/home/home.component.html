@@ -1,0 +1,36 @@
+<div class="card bg-dark text-white">
+  <img src="/assets/background.webp" class="card-img" alt="...">
+  <div class="card-img-overlay">
+      <app-navbar></app-navbar>
+    <div class="text">
+      <form action="">
+        <div class="row">
+      <h4>I'm looking for..</h4>
+
+          <div class="col-7">
+            <input type="text" name="" id="" class="width" value="Enter a Job Description">
+            <p class="d-inline-block mt-3" ><input type="checkbox" name="" id=""> Full Time
+              <input type="checkbox" name="" id="" class="ms-4"> Part Time / casual / Freelance 
+              <input type="text" name="" id="" value="Select your Location" class="location"></p>
+          </div>
+          <div class="col-5">
+            <button class="btn btn-info ps-3 pe-3 text-white" >
+            <i class="fa-solid fa-magnifying-glass"></i>
+            Search
+          </button></div>
+        </div>
+        
+      </form>
+      <button mat-raised-button  id="submit" class="m-5 btn btn-info ps-4 pe-4 text-dark " (click)="regBtn()" routerLink="registration">Register</button>
+      <!-- <button mat-raised-button  id="submit" class="m-5 btn btn-info ps-4 pe-4 text-dark " (click)="showBtn()" routerLink="showuser"> show Profile</button> -->
+    </div>
+    
+  </div>
+</div>
+<section>
+  <h4>We're leaders in</h4>
+  <h1>Creative Digital Recruitment</h1><br>
+  <p>Based on Surry Hills, the creative hub of Sydney We are surrounded by creativity  and that reflects on the tyle of jobs we recruit for.</p>
+  <div class="box">Find out more about us</div>
+</section>
+<app-footer></app-footer>

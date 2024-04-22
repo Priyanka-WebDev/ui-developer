@@ -1,0 +1,28 @@
+.card{
+    width: 60%;
+    margin: 0 auto;
+}
+.section{
+    padding: 12px;
+}
+h1{
+    background-color: rgb(49, 193, 237);
+    padding: 10px 12px;
+    text-align: center;
+}
+.heading h1{
+    display: flex;
+    justify-content: space-between;
+}
+form{
+    width: 100%;
+}
+.email, .phone{
+    width: 95%;
+}
+.col-6{
+    width: 50%;
+}
+.field{
+    width: 100%;
+}

@@ -1,0 +1,20 @@
+{
+    "data":[
+        {
+            "deptid":1,
+            "deptName":"sales"
+        },
+        {
+            "deptid":2,
+            "deptName":"Consultancy"
+        },
+        {
+            "deptid":3,
+            "deptName":"admin"
+        },
+        {
+            "deptid":4,
+            "deptName":"Account"
+        }
+    ]
+}

@@ -1,0 +1,56 @@
+<div class="container-fluid w-50  mx-auto">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand ms-5 ps-5" href="#">Navbar</a>
+          <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar"><i class="fa-solid fa-bars"></i></span>
+          </button>
+    
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto me-5">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#" >Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">About us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" routerLink="login">login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Clients</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Employee</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">contact us</a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+    <div class="container">
+        <div class="card">
+            <h1>Profile</h1>
+            <div class="row" *ngFor="let datas of user_records">
+                <div class="col image">
+                    <img [src]="datas.image" alt="photo" width="250" height="250"> <br>
+                    <button type="button" class="btn bg-warning">Edit Photo</button>
+                    <button type="button" class="btn bg-warning ">Edit Profile</button>
+                        
+                </div>
+                <div class="col">
+                    I'm {{datas.Fname}} {{datas.Lname}} and i'm above {{datas.age}} years and you can send your emails to caroline kassidy@publicis.com i live in the state of {{datas.State}}. I like to Play {{datas.tags+","}} and Please send me newsletters. Please reach out to me on my Phone number {{datas.MobileNo}},<br><br>
+                <button class="btn btn-success" routerLink="">I Agree</button>
+
+                </div>
+    
+                <div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
