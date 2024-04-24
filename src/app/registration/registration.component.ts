@@ -1,11 +1,11 @@
 import { Component, EnvironmentInjector, OnInit } from '@angular/core';
-import { FormControl, Validators, FormGroup} from '@angular/forms';
+import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { merge, Observable } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ImplicitReceiver } from '@angular/compiler';
 import { getMatFormFieldDuplicatedHintError } from '@angular/material/form-field';
 import { Router } from '@angular/router';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 import { MatSelect } from '@angular/material/select';
 
 @Component({
@@ -34,27 +34,27 @@ export class RegistrationComponent implements OnInit {
 
   ProfileDp: string = "assets/imges/photo.png";
 
-  onSelected(value: string):void {
+  onSelected(value: string): void {
     this.data.State = value;
-    }
-    onSelectedCountry(value: string):void {
-        this.data.Country = value;
-    }
-    
+  }
+  onSelectedCountry(value: string): void {
+    this.data.Country = value;
+  }
 
-      
+
+
 
   doRegisteration(values: any) {
     // this.user_records=JSON.parse(localStorage.getItem("users")||'{ }')
-    if(this.user_records.some((v)=>{
+    if (this.user_records.some((v) => {
       return v.email == this.data.Email;
-    })){
+    })) {
       alert("Duplicate Data");
     }
-    else{
+    else {
       this.user_records.push(this.data)
-      localStorage.setItem("users",JSON.stringify(this.user_records));
-      alert(`Hi ${this.data.Fname} You are Successfully registerd `);
+      localStorage.setItem("users", JSON.stringify(this.user_records));
+      alert(`Hi ${this.data.Fname} You are Successfully registered `);
     }
     this.router.navigate(['showuser'])
 
@@ -62,8 +62,8 @@ export class RegistrationComponent implements OnInit {
 
 
   ngOnInit(): void {
-    
-this.doRegisteration;
+
+    this.doRegisteration;
   }
 
   // toppings = new FormControl('');
@@ -101,7 +101,7 @@ this.doRegisteration;
 
   errorMessage = '';
 
-  constructor( private router:Router) {
+  constructor(private router: Router) {
     merge(this.email.statusChanges, this.email.valueChanges)
       .pipe(takeUntilDestroyed())
       .subscribe(() => this.updateErrorMessage());
@@ -119,12 +119,12 @@ this.doRegisteration;
       this.errorMessage = '';
     }
   }
- 
+
 
   states: State[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
+    { value: 'steak-0', viewValue: 'Steak' },
+    { value: 'pizza-1', viewValue: 'Pizza' },
+    { value: 'tacos-2', viewValue: 'Tacos' }
   ];
 }
 

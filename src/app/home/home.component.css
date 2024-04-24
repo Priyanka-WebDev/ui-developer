@@ -1,8 +1,9 @@
-img{
+img {
     height: 90vh;
     width: 100%;
 }
-.text{
+
+.text {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,20 +11,23 @@ img{
     height: 100%;
     text-align: start;
 }
-.text input{
+
+.text input {
     padding: 10px;
 }
 
-.row .width{
+.row .width {
     width: 92%;
 }
-section{
+
+section {
     background-color: #fff;
     height: 70vh;
     text-align: center;
     padding: 100px;
 }
-section .box{
+
+section .box {
     border: 2px solid rgb(29, 228, 246);
     display: inline-block;
     padding: 5px 20px;
@@ -32,29 +36,35 @@ section .box{
     margin-top: 40px;
     cursor: pointer;
 }
-.location{
+
+.location {
     margin-left: 28px;
 }
+
 @media (max-width:576px) {
-.row{
-    text-align: start;
-    position: relative;
-    margin-left: 30px;
-} 
-.row .col-7{
-width: 100%;
-}   
-.row .col-7 input{
-    padding: 4px;
-    font-size: 1rem;
-}
-.col-5{
-position:absolute;
-top:79%;
-left: 80%;
-transform: translate(-50%,-50%);
-}
-.location{
-    margin: 0px;
-}
+    .row {
+        text-align: start;
+        position: relative;
+        margin-left: 30px;
+    }
+
+    .row .col-7 {
+        width: 100%;
+    }
+
+    .row .col-7 input {
+        padding: 4px;
+        font-size: 1rem;
+    }
+
+    .col-5 {
+        position: absolute;
+        top: 79%;
+        left: 80%;
+        transform: translate(-50%, -50%);
+    }
+
+    .location {
+        margin: 0px;
+    }
 }

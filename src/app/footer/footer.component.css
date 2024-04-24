@@ -1,35 +1,36 @@
-
 .main {
-    background: #000;
-    height: 40vh;
-    color: aliceblue;
-    position: relative;
-    font-size: 1.2rem;
-    
-  }
- 
-  .main .second {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  background: #000;
+  height: 40vh;
+  color: aliceblue;
+  position: relative;
+  font-size: 1.2rem;
+
+}
+
+.main .second {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width:576px) {
+  .main {
+    width: 100%;
+    /* padding: 50px; */
+    /* padding-left: 50px; */
+    text-align: start;
   }
 
-  @media (max-width:576px) {
-    .main{
-      width: 100%;
-      /* padding: 50px; */
-      /* padding-left: 50px; */
-      text-align: start;
-    }
-    .main div .mail{
-      font-size: 1rem;
-      width: 71%;
-    }
-    #dropdownMenuLink{
-  border: 2px solid red;
-  width: 100%;
-  padding-left: 0px;
-    }
+  .main div .mail {
+    font-size: 1rem;
+    width: 71%;
   }
+
+  #dropdownMenuLink {
+    border: 2px solid red;
+    width: 100%;
+    padding-left: 0px;
+  }
+}
