@@ -31,7 +31,6 @@ export class RegistrationComponent implements OnInit {
     tags: "",
     image: ""
   }
-
   ProfileDp: string = "assets/imges/photo.png";
 
   onSelected(value: string): void {
@@ -41,7 +40,7 @@ export class RegistrationComponent implements OnInit {
     this.data.Country = value;
   }
 
-
+ 
 
 
   doRegisteration(values: any) {

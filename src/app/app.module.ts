@@ -13,16 +13,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatChipsModule } from '@angular/material/chips';
-import { MatAutocompleteSelectedEvent, MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatIconModule } from '@angular/material/icon';
 import { AsyncPipe } from '@angular/common';
-import { MatFormField } from '@angular/material/form-field';
-import { MatChip } from '@angular/material/chips';
-import { MatChipGrid } from '@angular/material/chips';
-import { MatChipListbox } from '@angular/material/chips';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
-import { MatSelect } from '@angular/material/select';
+import { RegisterComponent } from './register/register.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +30,7 @@ import { MatSelect } from '@angular/material/select';
     RegistrationComponent,
     ProfileComponent,
     FooterComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +46,9 @@ import { MatSelect } from '@angular/material/select';
     CommonModule,
     MatCheckboxModule,
     MatSelectModule,
+    NgbModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

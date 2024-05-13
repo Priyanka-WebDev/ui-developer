@@ -1,0 +1,157 @@
+
+
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    text-align: start;
+}
+
+.text input {
+    padding: 10px;
+}
+
+.row .width {
+    width: 92%;
+}
+
+section {
+    background-color: #fff;
+    height: 70vh;
+    text-align: center;
+    padding: 100px;
+}
+
+section .box {
+    border: 2px solid rgb(29, 228, 246);
+    display: inline-block;
+    padding: 5px 20px;
+    border-radius: 5px;
+    color: rgb(29, 228, 246);
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.location {
+    margin-left: 28px;
+}
+
+
+.modal-body {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .modal-body  .section {
+    padding: 12px;
+  }
+ 
+  .image-container img{
+    border-radius: 5px;
+    height: 200px;
+    width: 180px;
+    margin-top: 30px;
+  }
+
+  /* second */
+#body nav {
+    background-color: rgb(49, 193, 237);
+    text-transform: uppercase;
+    padding: 20px 0px;
+
+}
+
+#body li,
+#body a,
+#body button {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+    font-size: 16px;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+#body header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+#body .logo {
+    cursor: pointer;
+    margin-right: auto;
+}
+
+#body .nav_links {
+    list-style-type: none;
+}
+
+#body .nav_links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+#body .nav_links li a {
+    transition: all 0.3s ease 0s;
+}
+ 
+#body .nav_links li a:hover {
+    color: #0088a9;
+}
+
+#body button {
+    margin-left: 20px;
+    padding: 5px 20px;
+    text-align: center;
+    line-height: 27px;
+    background-color: rgb(73, 73, 143);
+    border: none;
+    cursor: pointer;
+    transition: aa 0.3s ease 0s;
+}
+#body button::after:hover{
+    background-color: rgba(0, 136, 169, .8);
+    border:none;
+    outline: none;
+}
+#body button:hover {
+    background-color: rgba(0, 136, 169, .8);
+    border: none;
+    outline: none;
+}
+
+#body h1 {
+    color: rgb(49, 193, 237);
+}
+
+
+
+@media (max-width:576px) {
+    .row {
+        text-align: start;
+        position: relative;
+        margin-left: 30px;
+    }
+
+    .row .col-7 {
+        width: 100%;
+    }
+
+    .row .col-7 input {
+        padding: 4px;
+        font-size: 1rem;
+    }
+
+    .col-5 {
+        position: absolute;
+        top: 79%;
+        left: 80%;
+        transform: translate(-50%, -50%);
+    }
+
+    .location {
+        margin: 0px;
+    }
+}

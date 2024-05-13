@@ -45,7 +45,7 @@ header {
 .nav_links li a {
     transition: all 0.3s ease 0s;
 }
-
+ 
 .nav_links li a:hover {
     color: #0088a9;
 }
@@ -60,9 +60,15 @@ button {
     cursor: pointer;
     transition: aa 0.3s ease 0s;
 }
-
+button::after:hover{
+    background-color: rgba(0, 136, 169, .8);
+    border:none;
+    outline: none;
+}
 button:hover {
     background-color: rgba(0, 136, 169, .8);
+    border: none;
+    outline: none;
 }
 
 h1 {
@@ -81,4 +87,4 @@ h1 {
 
 .card {
     padding: 40px;
-}
+} 

@@ -1,0 +1,256 @@
+<div class="card bg-dark text-white">
+  <img src="/assets/background.webp" class="card-img" alt="...">
+  <div class="card-img-overlay">
+    <app-navbar></app-navbar>
+    <div class="text">
+      <form action="">
+        <div class="row">
+          <h4>I'm looking for..</h4>
+
+          <div class="col-7">
+            <input type="text" name="" id="" class="width" value="Enter a Job Description">
+            <p class="d-inline-block mt-3"><input type="checkbox" name="" id=""> Full Time
+              <input type="checkbox" name="" id="" class="ms-4"> Part Time / casual / Freelance
+              <input type="text" name="" id="" value="Select your Location" class="location">
+            </p>
+          </div>
+          <div class="col-5">
+            <button class="btn btn-info ps-3 pe-3 text-white">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              Search
+            </button>
+          </div>
+        </div>
+
+      </form>
+      <button mat-raised-button id="submit" class="m-5 btn btn-info ps-4 pe-4 text-dark " routerLink="registration"
+        data-bs-toggle="modal" data-bs-target="#exampleModal">Register</button>
+      <button mat-raised-button id="submit" class="m-5 btn btn-info ps-4 pe-4 text-dark " routerLink="registration"
+      data-bs-toggle="modal" data-bs-target="#profile">Show User</button>
+      <!-- <button mat-raised-button  id="submit" class="m-5 btn btn-info ps-4 pe-4 text-dark " (click)="showBtn()" routerLink="showuser"> show Profile</button> -->
+    </div>
+
+  </div>
+</div>
+<section>
+  <h4>We're leaders in</h4>
+  <h1>Creative Digital Recruitment</h1><br>
+  <p>Based on Surry Hills, the creative hub of Sydney We are surrounded by creativity and that reflects on the tyle of
+    jobs we recruit for.</p>
+  <div class="box">Find out more about us</div>
+</section>
+<app-footer></app-footer>
+
+
+
+
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
+   -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Registration Form</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="Reset()"></button>
+      </div>
+      <div class="modal-body">
+        <!--form  -->
+        <div *ngIf="message" class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>Success</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <form class="g-3" autocomplete="off" [formGroup]="profileForm" (ngSubmit)="SaveData()">
+          <div class="row">
+            <div class="col-3">
+              <div class="image-container" *ngIf="ProfileDp">
+                <img [src]="ProfileDp" alt="ProfileDp" height="200" width="200">
+              </div>
+              <div>
+                <input name="img" hidden type="file" #profileUpload (change)="ImageUpload($event)" formControlName="Img"
+                  required>
+                <button class="btn btn-primary m-2 ms-4" mat-raised-button color="primary"
+                  (click)="profileUpload.click()">Upload Image</button>
+              </div>
+            </div>
+            <div class="col-9">
+              <div class="row mt-4">
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="First Name" formControlName="FName">
+                  <div class="text-danger" *ngIf="profileForm.controls['FName'].invalid &&(profileForm.controls['FName'].touched || profileForm.controls['FName'].dirty ||isFormSubmit)">
+                  <span *ngIf="profileForm.controls['FName'].errors?.['required']">First Name is required</span>
+                  </div>
+                </div>
+                
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Last NAme" formControlName="LName">
+                  <div class="text-danger" *ngIf="profileForm.controls['LName'].invalid &&(profileForm.controls['LName'].touched || profileForm.controls['LName'].dirty ||isFormSubmit)">
+                    <span *ngIf="profileForm.controls['LName'].errors?.['required']">Last Name is required</span>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-12 mt-4">
+                <input type="email" class="form-control" placeholder="Enter Email" formControlName="EMail">
+                <div class="text-danger" *ngIf="profileForm.controls['EMail'].invalid && (profileForm.controls['EMail'].touched || profileForm.controls['EMail'].dirty || isFormSubmit)">
+                  <span *ngIf="profileForm.controls['EMail'].errors?.['required']">Email is required</span>
+                  <span *ngIf="profileForm.controls['EMail'].errors?.['email']">Enter Proper mail ID</span>
+                  </div>
+              </div>
+              <div class="col-md-12 mt-4">
+                <input type="tel" class="form-control" placeholder="52364-26364" formControlName="MobileNO">
+                <div class="text-danger" *ngIf="profileForm.controls['MobileNO'].invalid && (profileForm.controls['MobileNO'].touched || profileForm.controls['MobileNO'].dirty ||isFormSubmit)">
+                  <span *ngIf="profileForm.controls['MobileNO'].errors?.['required']">Mobile NO required</span>
+                  <span *ngIf="profileForm.controls['MobileNO'].errors?.['minlength']">Max Ten digits only!</span>
+                  <span *ngIf="profileForm.controls['MobileNO'].errors?.['maxlength']">Max Ten digits only!</span>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-md-3 mt-2">
+                  <label for="age">Age {{age}}</label>
+                </div>
+                <div class="col-md-8 m-4">
+                  <input type="range" class="form-range customRange" value="1" min="20" max="60" name="age"
+                    [(ngModel)]="age" #ageInput (input)="updateAge(ageInput.value)" formControlName="Age" />
+                    
+                  <div class="d-flex justify-content-between">
+                    <span>20</span>
+                    <span>60</span>
+                  </div>
+                  <div class="text-danger" *ngIf="profileForm.controls['Age'].invalid &&(profileForm.controls['Age'].touched || profileForm.controls['Age'].dirty ||isFormSubmit)">
+                    <span *ngIf="profileForm.controls['Age'].errors?.['required']">Age is required</span>
+                    </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="inputState" class="form-label">State</label>
+                  <select id="inputState" class="form-select" formControlName="State">
+                    <option selected>Choose...</option>
+                    <option>Maharashtra</option>
+                    <option>Karnataka</option>
+                    <option>Up</option>
+                  </select>
+                  <div class="text-danger" *ngIf="profileForm.controls['State'].invalid &&(profileForm.controls['State'].touched || profileForm.controls['State'].dirty ||isFormSubmit)">
+                    <span *ngIf="profileForm.controls['State'].errors?.['required']">State is required</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="inputState" class="form-label">Country</label>
+                  <select id="inputState" class="form-select" formControlName="Country">
+                    <option selected>Choose...</option>
+                    <option>India</option>
+                    <option>USA</option>
+                    <option>UAE</option>
+                  </select>
+                  <div class="text-danger" *ngIf="profileForm.controls['Country'].invalid &&(profileForm.controls['Country'].touched || profileForm.controls['Country'].dirty ||isFormSubmit)">
+                    <span *ngIf="profileForm.controls['Country'].errors?.['required']">Country is required</span>
+                    </div>
+                </div>
+              </div>
+              <div class="col-12 mt-3">
+                <label for="inputAddress" class="form-label">Address</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"
+                  formControlName="Address">
+
+              </div>
+
+
+
+              <div class="col-md-12 mt-3">
+                <label for="inputZip" class="form-label">Tags</label>
+                <input type="text" class="form-control" id="inputZip" formControlName="Tag">
+              </div>
+              <div class="col-12 mt-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="gridCheck" formControlName="Subscribe">
+                  <label class="form-check-label" for="gridCheck">
+                    Subscribe to newslatter
+                  </label>
+                </div>
+              </div>
+
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="Reset()">Cancel</button>
+              <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+              <button type="submit" class="btn btn-primary" id="btn" (click)="submitD()">Submit</button>
+
+            </div>
+          </div>
+        </form>
+        <!-- /form  -->
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade border-info" id="profile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!--  navbar-->
+
+  <!--  navbar closed-->
+  <div class="modal-dialog modal-lg ">
+    <div class="modal-content">
+      <div class="modal-body " id="body">
+        <div class="container w-100  mx-auto border ">
+          <nav class="navbar navbar-expand-lg navbar-info">
+            <div class="container-fluid">
+              <a class="navbar-brand ms-5 ps-5" href="#">Navbar</a>
+              <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar"><i class="fa-solid fa-bars"></i></span></button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto me-5">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">About us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="login">login</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Clients</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Employee</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">contact us</a>
+                  </li>
+        
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <!-- body -->
+        <div class="container ">
+          <div class="card border-none">
+            <h1>Profile</h1>
+            <div class="row" >
+              <div class="col-4">
+                <img [src]="formData.Img" height="200" width="180" alt="{{formData.Img}}" class="rounded-3"> <br><br>
+              </div>
+              <div class="col-8">
+                I'm {{formData.FName}} {{formData.LName}} and i'm {{formData.Age}} years and you can send your emails to caroline
+                kassidy@publicis.com i live in the {{formData.State}} state of {{formData.Country}}. I like to Play {{formData.Tag +","}} and Please send
+                me newsletters. Please reach out to me on my Phone number {{formData.MobileNO}},<br><br>
+              </div>
+            </div>
+          </div>
+        <!-- body closed -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-dismiss="modal">Edit Profile</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="Reset()">I Agree</button>
+      </div>
+    </div>
+  </div>
+</div>
